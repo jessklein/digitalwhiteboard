@@ -1,16 +1,4 @@
 <div class="container">
-    <p><span class="break1">&nbsp;</span> = Break 1<br />
-    <span class="break2">&nbsp;</span> = Break 2<br />
-    <span class="break3">&nbsp;</span> = Break 3<br />
-    &rarr; = In Training<br />
-    &Dagger; = Function 1 Only<br />
-    &spades; = Function 2 Capable<br />
-    &clubs; = Function 3 Capable<br />
-    &hearts; = Function 4 Capable<br />
-    &diams; = Function 5 Capable</p>
-</div>
-<h1>Staff</h1>
-<div class="container">
     <div class="emp" id="emp01" draggable="true" ondragstart="drag(event)">
         <span class="break1">&nbsp;</span> Employee 01
         <span class="capable">&rarr;</span>

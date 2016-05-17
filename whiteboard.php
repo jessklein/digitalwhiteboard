@@ -26,234 +26,131 @@
             <h1>Site 1</h1>
             <div class="container">
                 <h2>Function 1</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 19; $x++) {
+                        $target = 0;
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                        $target++;
+                    }
+                ?>
             </div>
             <div class="container">
                 <h2>Function 2</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 19; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
             <div class="container">
                 <h2>Function 3</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 5; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
             <div class="container">
                 <h2>Function 4</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 5; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
             <div class="container">
                 <h2>Function 5</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 5; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
         </div>
         <div id="col2">
             <h1>Site 2</h1>
             <div class="container">
                 <h2>Function 1</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 19; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
             <div class="container">
                 <h2>Function 2</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 19; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
             <div class="container">
                 <h2>Function 3</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 5; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
             <div class="container">
                 <h2>Function 4</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 5; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
             <div class="container">
                 <h2>Function 5</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 5; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
         </div>
         <div id="col3">
             <h1>Site 3</h1>
             <div class="container">
                 <h2>Function 1</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 19; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
              <div class="container">
                 <h2>Function 2</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 19; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
              <div class="container">
                 <h2>Function 3</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 5; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
              <div class="container">
                 <h2>Function 4</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 5; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
             <div class="container">
                 <h2>Function 5</h2>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 5; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
         </div>
         <div id="col4">
@@ -263,36 +160,11 @@
             </div>
             <h1>Staff Out</h1>
             <div class="container">
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                <div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <?php
+                    for ($x = 0; $x <= 29; $x++) {
+                        echo '<div class="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
+                    }
+                ?>
             </div>
         </div>
         <div id="col5">

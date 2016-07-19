@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Case Whiteboard</title>
+    <!-- load page styling -->
+    <link href='css/main.css' rel='stylesheet' type='text/css' />
+    
+    <!-- load angular and bootstrap -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-dragdrop.min.js"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- load jquery -->
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/ui.multisortable.js"></script>
+    <script>
+        var positions = JSON.parse(localStorage.positions || "{}");
+        $(function () {
+            var d = $("[id=draggable]").attr("id", function (i) {
+                return "draggable_" + i
+            })
+            $.each(positions, function (id, pos) {
+                $("#" + id).css(pos)
+            })
+            d.draggable({
+                containment: ".target",
+                scroll: false,
+                stop: function (event, ui) {
+                    positions[this.id] = ui.position
+                    localStorage.positions = JSON.stringify(positions)
+                }
+            });
+        });
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    
+    <!-- load app scripts -->
+    <script src="app/app.js"></script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <header><h1>JPMC VT Digital Whiteboard</h1></header>
+        <!-- first site -->
+        <div id="col1">
+            <h2>Chicago</h2>
+            <div class="function dc1">
+                <h3>DC1</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    
+                </div>
+            </div>
+            <div class="function dc2">
+                <h3>DC2</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function ff">
+                <h3>Freeform</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function mid">
+                <h3>Manual ID</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function jbaide">
+                <h3>JBAide</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+        </div>
+        
+        <!-- second site -->
+        <div id="col2">
+            <h2>Dallas</h2>
+            <div class="function dc1">
+                <h3>DC1</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function dc2">
+                <h3>DC2</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function ff">
+                <h3>Freeform</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function mid">
+                <h3>Manual ID</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function jbaide">
+                <h3>JBAide</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+        </div>
+        
+        <!-- third site -->
+        <div id="col3">
+            <h2>Phoenix</h2>
+            <div class="function dc1">
+                <h3>DC1</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function dc2">
+                <h3>DC2</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function ff">
+                <h3>Freeform</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function mid">
+                <h3>Manual ID</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function jbaide">
+                <h3>JBAide</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+        </div>
+        
+        <!-- staff sidebar -->
+        <div id="col4">
+            <h2>Scheduled Out</h2>
+            <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
+            <h2>Staff</h2>
+            <ul>
+                <li class="emp break1 draggable" id="emp01" draggable="true" ondragstart="drag(event)">Employee One</li>
+                <li class="emp break2 draggable" id="emp02" draggable="true" ondragstart="drag(event)">Employee Two</li>
+                <li class="emp break3 draggable" id="emp03" draggable="true" ondragstart="drag(event)">Employee Three</li>
+                <li class="emp break1 draggable" id="emp04" draggable="true" ondragstart="drag(event)">Employee Four</li>
+                <li class="emp break2 draggable" id="emp05" draggable="true" ondragstart="drag(event)">Employee Five</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Case Whiteboard - Dashboard</title>
+    <!-- load page styling -->
+    <link href='css/main.css' rel='stylesheet' type='text/css' />
+        
+    <!-- load angular and bootstrap -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-dragdrop.min.js"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- load jquery -->
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/ui.multisortable.js"></script>
+    <script>
+        //* Runs the drag and drop functionality
+        var positions = JSON.parse(localStorage.positions || "{}");
+        $(function () {
+            var d = $("[id=draggable]").attr("id", function (i) {
+                return "draggable_" + i
+            })
+            $.each(positions, function (id, pos) {
+                $("#" + id).css(pos)
+            })
+            d.draggable({
+                containment: ".target",
+                scroll: false,
+                stop: function (event, ui) {
+                    positions[this.id] = ui.position
+                    localStorage.positions = JSON.stringify(positions)
+                }
+            });
+        });
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+        
+        //* Runs the tabbed roster functionality
+        function openTab(evt, shiftName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            // Show the current tab, and add an "active" class to the link that opened the tab
+            document.getElementById(shiftName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        
+        //* Runs the split calculator
+        function updateOutput() {
+            // Get the calculator form
+            var form = document.getElementById("splitcalc");
+            // Initialize output variables
+            var chitotal = form.elements["chitotal"];
+            var chistaff = form.elements["chistaff"];
+            var chipercent = form.elements["chipercent"];
+            var daltotal = form.elements["daltotal"];
+            var dalstaff = form.elements["dalstaff"];
+            var dalpercent = form.elements["dalpercent"];
+            var phxtotal = form.elements["phxtotal"];
+            var phxstaff = form.elements["phxstaff"];
+            var phxpercent = form.elements["phxpercent"];
+            var eflowtotal = form.elements["eflowtotal"];
+            // Initialize and retrieve input variables
+            var staff = parseInt(form.elements["staffcount"].value);
+            var chidc1 = parseInt(form.elements["chidc1"].value);
+            var chidc2 = parseInt(form.elements["chidc2"].value);
+            var chiff = parseInt(form.elements["chiff"].value);
+            var chimid = parseInt(form.elements["chimid"].value);
+            var daldc1 = parseInt(form.elements["daldc1"].value);
+            var daldc2 = parseInt(form.elements["daldc2"].value);
+            var dalff = parseInt(form.elements["dalff"].value);
+            var dalmid = parseInt(form.elements["dalmid"].value);
+            var phxdc1 = parseInt(form.elements["phxdc1"].value);
+            var phxdc2 = parseInt(form.elements["phxdc2"].value);
+            var phxff = parseInt(form.elements["phxff"].value);
+            var phxmid = parseInt(form.elements["phxmid"].value);
+            // Perform calculations
+            chitotal.value = chidc1 + chidc2 + chiff + chimid;
+            daltotal.value = daldc1 + daldc2 + dalff + dalmid;
+            phxtotal.value = phxdc1 + phxdc2 + phxff + phxmid;
+            eflowtotal.value = chitotal + daltotal + phxtotal;
+            chipercent.value = chitotal / eflowtotal * 100;
+            dalpercent.value = daltotal / eflowtotal * 100;
+            phxpercent.value = phxtotal / eflowtotal * 100;
+            chistaff.value = chipercent / staff * 100;
+            dalstaff.value = dalpercent / staff * 100;
+            phxstaff.value = phxpercent / staff * 100;
+        }
+    </script>
+    
+    <!-- load app scripts -->
+    <script src="app/app.js"></script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <nav>
+            <div id="menu">
+                <ul class="nav">
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="staff.html">Staff Roster</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header><h1>JPMC VT Digital Whiteboard</h1></header>
+        <div id="dashboard">
+            <p>To Add, Edit or Remove Employees, please see the Staff Roster module (link on the left).<br />
+            To assign staff members to a particular function, drag their tile from the Staff list on the right to the desired site/function and click the 'Submit' button. Multiple changes can be made at a time. Changes will be saved and published immediately.</p>
+            
+            <div id="calc">
+                <h2>Split Calculator</h2>
+                <form id="splitcalc" oninput="updateOutput()">
+                <label>Active Staff Count:</label> <input type="number" name="staffcount" value="0" onchange="updateOutput()" />
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>DC1</th>
+                        <th>DC2</th>
+                        <th>FF</th>
+                        <th>MID</th>
+                        <th>eFlow Total</th>
+                        <th>eFlow %</th>
+                        <th>Assign Staff</th>
+                    </tr>
+                    <tr>
+                        <th>CHI</th>
+                        <td><input type="number" name="chidc1" value="0" onchange="updateOutput()" /></td>
+                        <td><input type="number" name="chidc2" value="0" onchange="updateOutput()" /></td>
+                        <td><input type="number" name="chiff" value="0" onchange="updateOutput()" /></td>
+                        <td><input type="number" name="chimid" value="0" onchange="updateOutput()" /></td>
+                        <td><output type="number" name="chitotal" value="0" /></td>
+                        <td><output type="number" name="chipercent" value ="0" /></td>
+                        <td><output type="number" name="chistaff" value="0" /></td>
+                    </tr>
+                    <tr>
+                        <th>DAL</th>
+                        <td><input type="number" name="daldc1" value="0" onchange="updateOutput()" /></td>
+                        <td><input type="number" name="daldc2" value="0" onchange="updateOutput()" /></td>
+                        <td><input type="number" name="dalff" value="0" onchange="updateOutput()" /></td>
+                        <td><input type="number" name="dalmid" value="0" onchange="updateOutput()" /></td>
+                        <td><output type="number" name="daltotal" value="0" /></td>
+                        <td><output type="number" name="dalpercent" value ="0" /></td>
+                        <td><output type="number" name="dalstaff" value="0" /></td>
+                    </tr>
+                    <tr>
+                        <th>PHX</th>
+                        <td><input type="number" name="phxdc1" value="0" onchange="updateOutput()" /></td>
+                        <td><input type="number" name="phxdc2" value="0" onchange="updateOutput()" /></td>
+                        <td><input type="number" name="phxff" value="0" onchange="updateOutput()" /></td>
+                        <td><input type="number" name="phxmid" value="0" onchange="updateOutput()" /></td>
+                        <td><output type="number" name="phxtotal" value="0" /></td>
+                        <td><output type="number" name="phxpercent" value ="0" /></td>
+                        <td><output type="number" name="phxstaff" value="0" /></td>
+                    </tr>
+                    <tr>
+                        <th>Total</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><output type="number" name="eflowtotal" value="0" /></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                </form>
+            </div>
+        <h2>Assignments</h2>
+        <!-- first site -->
+        <div id="col1">
+            <h2>Chicago</h2>
+            <div class="function dc1">
+                <h3>DC1</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    
+                </div>
+            </div>
+            <div class="function dc2">
+                <h3>DC2</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function midff">
+                <h3>Freeform</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function midff">
+                <h3>Manual ID</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function jbaide">
+                <h3>JBAide</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+        </div>
+        
+        <!-- second site -->
+        <div id="col2">
+            <h2>Dallas</h2>
+            <div class="function dc1">
+                <h3>DC1</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function dc2">
+                <h3>DC2</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function midff">
+                <h3>Freeform</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function midff">
+                <h3>Manual ID</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function jbaide">
+                <h3>JBAide</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+        </div>
+        
+        <!-- third site -->
+        <div id="col3">
+            <h2>Phoenix</h2>
+            <div class="function dc1">
+                <h3>DC1</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function dc2">
+                <h3>DC2</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function midff">
+                <h3>Freeform</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function midff">
+                <h3>Manual ID</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+            <div class="function jbaide">
+                <h3>JBAide</h3>
+                <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+                </div>
+            </div>
+        </div>
+        
+        <!-- staff sidebar -->
+        <div id="col4">
+            <h2>Announcements</h2>
+            <textarea class="announce"></textarea>
+            <h2>Scheduled Out</h2>
+            <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
+            <h2>Trainging/Skills Academy</h2>
+            <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
+            <h2>Project</h2>
+            <div class="assign target" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
+            <h2>Staff</h2>
+            <ul class="tab">
+                <li><a href="#" class="tablinks" onclick="openTab(event, 'First')">1st Shift</a></li>
+                <li><a href="#" class="tablinks" onclick="openTab(event, 'Second')">2nd Shift</a></li>
+                <li><a href="#" class="tablinks" onclick="openTab(event, 'Third')">3rd Shift</a></li>
+            </ul>
+            <div id="First" class="tabcontent active">
+                <ul class="tiles">
+                    <li class="emp break1 draggable dc1" id="emp01" draggable="true" ondragstart="drag(event)">John A Doe</li>
+                    <li class="emp break2 draggable dc2" id="emp02" draggable="true" ondragstart="drag(event)">Jane B Doe</li>
+                    <li class="emp break3 draggable midff" id="emp03" draggable="true" ondragstart="drag(event)">John C Doe</li>
+                    <li class="emp break1 draggable jbaide" id="emp04" draggable="true" ondragstart="drag(event)">Jane D Doe</li>
+                    <li class="emp break2 draggable dc1" id="emp05" draggable="true" ondragstart="drag(event)">John E Doe</li>
+                    <li class="emp break1 draggable dc2" id="emp06" draggable="true" ondragstart="drag(event)">Jane F Doe</li>
+                    <li class="emp break2 draggable midff" id="emp07" draggable="true" ondragstart="drag(event)">John G Doe</li>
+                    <li class="emp break3 draggable jbaide" id="emp08" draggable="true" ondragstart="drag(event)">Jane H Doe</li>
+                    <li class="emp break1 draggable dc1" id="emp09" draggable="true" ondragstart="drag(event)">John I Doe</li>
+                    <li class="emp break2 draggable dc2" id="emp10" draggable="true" ondragstart="drag(event)">Jane J Doe</li>
+                    <li class="emp break1 draggable midff" id="emp11" draggable="true" ondragstart="drag(event)">John K Doe</li>
+                    <li class="emp break2 draggable jbaide" id="emp12" draggable="true" ondragstart="drag(event)">Jane L Doe</li>
+                    <li class="emp break3 draggable dc1" id="emp13" draggable="true" ondragstart="drag(event)">John M Doe</li>
+                    <li class="emp break1 draggable dc2" id="emp14" draggable="true" ondragstart="drag(event)">Jane N Doe</li>
+                    <li class="emp break2 draggable midff" id="emp15" draggable="true" ondragstart="drag(event)">John O Doe</li>
+                    <li class="emp break1 draggable jbaide" id="emp16" draggable="true" ondragstart="drag(event)">Jane P Doe</li>
+                    <li class="emp break2 draggable dc1" id="emp17" draggable="true" ondragstart="drag(event)">John Q Doe</li>
+                    <li class="emp break3 draggable dc2" id="emp18" draggable="true" ondragstart="drag(event)">Jane R Doe</li>
+                    <li class="emp break1 draggable midff" id="emp19" draggable="true" ondragstart="drag(event)">John S Doe</li>
+                    <li class="emp break2 draggable jbaide" id="emp20" draggable="true" ondragstart="drag(event)">Jane T Doe</li>
+                    <li class="emp break2 draggable dc1" id="emp21" draggable="true" ondragstart="drag(event)">John U Doe</li>
+                    <li class="emp break2 draggable dc2" id="emp22" draggable="true" ondragstart="drag(event)">Jane V Doe</li>
+                </ul>
+            </div>
+            <div id="Second" class="tabcontent">
+                <ul class="tiles">
+                    <li class="emp break1 draggable dc1" id="emp01" draggable="true" ondragstart="drag(event)">John A Doe</li>
+                    <li class="emp break2 draggable dc2" id="emp02" draggable="true" ondragstart="drag(event)">Jane B Doe</li>
+                    <li class="emp break3 draggable midff" id="emp03" draggable="true" ondragstart="drag(event)">John C Doe</li>
+                    <li class="emp break1 draggable jbaide" id="emp04" draggable="true" ondragstart="drag(event)">Jane D Doe</li>
+                    <li class="emp break2 draggable dc1" id="emp05" draggable="true" ondragstart="drag(event)">John E Doe</li>
+                    <li class="emp break1 draggable dc2" id="emp06" draggable="true" ondragstart="drag(event)">Jane F Doe</li>
+                    <li class="emp break2 draggable midff" id="emp07" draggable="true" ondragstart="drag(event)">John G Doe</li>
+                    <li class="emp break3 draggable jbaide" id="emp08" draggable="true" ondragstart="drag(event)">Jane H Doe</li>
+                    <li class="emp break1 draggable dc1" id="emp09" draggable="true" ondragstart="drag(event)">John I Doe</li>
+                    <li class="emp break2 draggable dc2" id="emp10" draggable="true" ondragstart="drag(event)">Jane J Doe</li>
+                    <li class="emp break1 draggable midff" id="emp11" draggable="true" ondragstart="drag(event)">John K Doe</li>
+                    <li class="emp break2 draggable jbaide" id="emp12" draggable="true" ondragstart="drag(event)">Jane L Doe</li>
+                    <li class="emp break3 draggable dc1" id="emp13" draggable="true" ondragstart="drag(event)">John M Doe</li>
+                    <li class="emp break1 draggable dc2" id="emp14" draggable="true" ondragstart="drag(event)">Jane N Doe</li>
+                    <li class="emp break2 draggable midff" id="emp15" draggable="true" ondragstart="drag(event)">John O Doe</li>
+                    <li class="emp break1 draggable jbaide" id="emp16" draggable="true" ondragstart="drag(event)">Jane P Doe</li>
+                    <li class="emp break2 draggable dc1" id="emp17" draggable="true" ondragstart="drag(event)">John Q Doe</li>
+                    <li class="emp break3 draggable dc2" id="emp18" draggable="true" ondragstart="drag(event)">Jane R Doe</li>
+                    <li class="emp break1 draggable midff" id="emp19" draggable="true" ondragstart="drag(event)">John S Doe</li>
+                    <li class="emp break2 draggable jbaide" id="emp20" draggable="true" ondragstart="drag(event)">Jane T Doe</li>
+                    <li class="emp break2 draggable dc1" id="emp21" draggable="true" ondragstart="drag(event)">John U Doe</li>
+                    <li class="emp break2 draggable dc2" id="emp22" draggable="true" ondragstart="drag(event)">Jane V Doe</li>
+                </ul>
+            </div>
+            <div id="Third" class="tabcontent">
+                <ul class="tiles">
+                    <li class="emp break1 draggable dc1" id="emp01" draggable="true" ondragstart="drag(event)">John A Doe</li>
+                    <li class="emp break2 draggable dc2" id="emp02" draggable="true" ondragstart="drag(event)">Jane B Doe</li>
+                    <li class="emp break3 draggable midff" id="emp03" draggable="true" ondragstart="drag(event)">John C Doe</li>
+                    <li class="emp break1 draggable jbaide" id="emp04" draggable="true" ondragstart="drag(event)">Jane D Doe</li>
+                    <li class="emp break2 draggable dc1" id="emp05" draggable="true" ondragstart="drag(event)">John E Doe</li>
+                    <li class="emp break1 draggable dc2" id="emp06" draggable="true" ondragstart="drag(event)">Jane F Doe</li>
+                    <li class="emp break2 draggable midff" id="emp07" draggable="true" ondragstart="drag(event)">John G Doe</li>
+                    <li class="emp break3 draggable jbaide" id="emp08" draggable="true" ondragstart="drag(event)">Jane H Doe</li>
+                    <li class="emp break1 draggable dc1" id="emp09" draggable="true" ondragstart="drag(event)">John I Doe</li>
+                    <li class="emp break2 draggable dc2" id="emp10" draggable="true" ondragstart="drag(event)">Jane J Doe</li>
+                    <li class="emp break1 draggable midff" id="emp11" draggable="true" ondragstart="drag(event)">John K Doe</li>
+                    <li class="emp break2 draggable jbaide" id="emp12" draggable="true" ondragstart="drag(event)">Jane L Doe</li>
+                    <li class="emp break3 draggable dc1" id="emp13" draggable="true" ondragstart="drag(event)">John M Doe</li>
+                    <li class="emp break1 draggable dc2" id="emp14" draggable="true" ondragstart="drag(event)">Jane N Doe</li>
+                    <li class="emp break2 draggable midff" id="emp15" draggable="true" ondragstart="drag(event)">John O Doe</li>
+                    <li class="emp break1 draggable jbaide" id="emp16" draggable="true" ondragstart="drag(event)">Jane P Doe</li>
+                    <li class="emp break2 draggable dc1" id="emp17" draggable="true" ondragstart="drag(event)">John Q Doe</li>
+                    <li class="emp break3 draggable dc2" id="emp18" draggable="true" ondragstart="drag(event)">Jane R Doe</li>
+                    <li class="emp break1 draggable midff" id="emp19" draggable="true" ondragstart="drag(event)">John S Doe</li>
+                    <li class="emp break2 draggable jbaide" id="emp20" draggable="true" ondragstart="drag(event)">Jane T Doe</li>
+                    <li class="emp break2 draggable dc1" id="emp21" draggable="true" ondragstart="drag(event)">John U Doe</li>
+                    <li class="emp break2 draggable dc2" id="emp22" draggable="true" ondragstart="drag(event)">Jane V Doe</li>
+                </ul>
+            </div>
+        </div>
+        <input type="submit" value="Update Board" />
+        <footer>Assignments Last Updated: <em>July 7, 2016 @ 9:32 PM</em> by John J Smith<br />
+        <em>(Number)</em> users currently viewing the published board. <em>(Number)</em> users currently editing assignments.</footer>
+        </div>
+    </div>
+</body>

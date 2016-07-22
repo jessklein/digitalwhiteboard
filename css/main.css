@@ -1,10 +1,11 @@
 * {
     box-sizing: border-box;
 }
-body {
+html, body {
     background-color: #fff;
     margin: 0px;
     font-family: sans-serif;
+    height: 100%;
 }
 [draggable] {
   -moz-user-select: none;
@@ -17,9 +18,43 @@ body {
 }
 header {
     text-align: center;
+    margin: 0px;
+}
+footer {
+    clear: both;
+    margin: 50px 0px;
+}
+header h1 {
+    margin: 0px;
 }
 #wrap {
     width: 100%;
+}
+#menu {
+    height: 100vh;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    padding-top: 100px;
+    background-color: #003366;
+    color: #fff;
+    float: left;
+}
+.nav {
+    position: relative;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.nav li {
+    padding: 5px 20px;
+}
+.nav li:hover, .nav li:active {
+    background-color: #6699cc;
+}
+.nav a:link, .nav a:visited {
+    color: #fff;
+    text-decoration: none;
 }
 #col1, #col2, #col3, #col4 {
     width: 23%;
@@ -44,13 +79,23 @@ header {
 .assign {
     padding: 10px;
 }
-ul {
+.tiles {
     display:inline-block;
     vertical-align:top;
     list-style: none;
     margin: 0px;
+    padding: 0px;
 }
-li {
+.emp {
+    background-color:Azure;
+    border:1px solid Gray;
+    margin: 1px;
+    padding: 1px 10px;
+    list-style: none;
+    min-width: 150px;
+    cursor: move;
+}
+.draggable {
     background-color:Azure;
     border:1px solid Gray;
     margin: 1px;
@@ -68,6 +113,18 @@ li {
 .break3 {
     border-left: 10px solid green;
 }
+.dc1 {
+    background-color: #cccccc;
+}
+.dc2 {
+    background-color: #ccccff;
+}
+.midff {
+    background-color:  #ffcc99;
+}
+.jbaide {
+    background-color: #ccffcc;
+}
 .announce {
     background-color: lightgray;
     border: 1px solid red;
@@ -75,5 +132,72 @@ li {
     font-weight: bold;
     font-family: sans-serif;
     width: 100%;
-    height: 150px;
+    height: 100px;
+}
+#dashboard, #staff {
+    padding: 50px 50px 50px 300px;
+    width: 100%;
+}
+#current {
+    width: 50%;
+    float: left;
+}
+#addstaff {
+    width: 50%;
+    float: right;
+}
+#current table {
+    width: 100%;
+}
+#current table img {
+    display: block;
+    margin: auto;
+}
+#staff tr:nth-child(even) {
+    background-color: #ccffcc;
+}
+#staff tr:nth-child(odd) {
+    background-color: #ecfcec;
+}
+#addstaff label, #addstaff input {
+    display: inline-block;
+}
+#addstaff label {
+    width: 150px;
+}
+#addstaff .schedule {
+    margin-left: 50px;
+}
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+ul.tab li {
+    float: left;
+}
+ul.tab li a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    background-color: #ccc;
+}
+.active {
+    display: block;
+}
+#calc table td {
+    background-color: #ccc;
 }

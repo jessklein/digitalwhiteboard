@@ -46,7 +46,7 @@
         }
     </script>
     
-    <!-- load app scripts -->
-    <script src="app/app.js"></script>
-    
 </head>
+<body>
+    <div id="wrap">
+        <header><h1>JPMC VT Digital Whiteboard</h1></header>

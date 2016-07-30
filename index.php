@@ -1,8 +1,6 @@
 
 <?php include('header.php'); ?>
-<body>
-    <div id="wrap">
-        <header><h1>JPMC VT Digital Whiteboard</h1></header>
+
         <!-- first site -->
         <div id="col1">
             <h2>Chicago</h2>

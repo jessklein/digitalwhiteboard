@@ -212,3 +212,27 @@ ul.tab li a:focus, .active {
 #calc table td {
     background-color: #ccc;
 }
+
+/* Login */
+#login {
+    background-color: #ecf0f1;
+    margin: 50px auto;
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    -moz-box-shadow: 0px 0px 5px #888;
+    -webkit-box-shadow: 0px 0px 5px #888;
+    box-shadow: 0px 0px 5px #888;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#login h2 {
+    text-align: center;
+}
+#login input {
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #bdc3c7;
+    border: 1px solid #2c3e50;
+    margin: 2px;
+}

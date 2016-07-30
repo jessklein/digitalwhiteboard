@@ -110,3 +110,8 @@
             phxstaff.value = Math.round(parseInt(staffcount.value) / parseInt(phxpercent.value) * 100);
         }
     </script>
+    </head>
+<body>
+    <div id="wrap">
+        <?php include('sidebar.php'); ?>
+        <header><h1>JPMC VT Digital Whiteboard</h1></header>

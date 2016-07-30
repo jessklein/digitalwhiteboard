@@ -66,6 +66,7 @@ footer {
 
 /* Grid Structure */
 #col1, #col2, #col3, #col4 {
+    background-color: #ccc;
     width: 23%;
     margin: 5px;
     float: left;
@@ -123,7 +124,7 @@ footer {
     border-left: 10px solid green;
 }
 .dc1 {
-    background-color: #cccccc;
+    background-color: #ecf0f1;
 }
 .dc2 {
     background-color: #ccccff;

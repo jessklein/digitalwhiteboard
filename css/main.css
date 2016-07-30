@@ -1,3 +1,8 @@
+/*
+    Developed by: Jessica Klein
+*/
+
+/* Basic Page/Body Structure */
 * {
     box-sizing: border-box;
 }
@@ -20,16 +25,18 @@ header {
     text-align: center;
     margin: 0px;
 }
+header h1 {
+    margin: 0px;
+}
 footer {
     clear: both;
     margin: 50px 0px;
 }
-header h1 {
-    margin: 0px;
-}
 #wrap {
     width: 100%;
 }
+
+/* Menu Styling */
 #menu {
     height: 100vh;
     height: 100%;
@@ -56,6 +63,8 @@ header h1 {
     color: #fff;
     text-decoration: none;
 }
+
+/* Grid Structure */
 #col1, #col2, #col3, #col4 {
     width: 23%;
     margin: 5px;
@@ -168,6 +177,8 @@ header h1 {
 #addstaff .schedule {
     margin-left: 50px;
 }
+
+/* Tabbed Dashboard Content */
 ul.tab {
     list-style-type: none;
     margin: 0;

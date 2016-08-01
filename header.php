@@ -49,4 +49,4 @@
 </head>
 <body>
     <div id="wrap">
-        <header><h1>JPMC VT Digital Whiteboard</h1></header>
+        <header><h1>Digital Whiteboard</h1></header>

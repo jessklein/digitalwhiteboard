@@ -4,6 +4,7 @@ Still in very early alpha stages of development. Previous technology/security re
 
 Current tasks:
 * Clean up CSS file structure
+* Build automatic app installer (auto setup of db structure etc)
 * Develop admin dashboard and secure login functionality
 * Convert staff list display to "tag cloud" like structure
 

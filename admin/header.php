@@ -114,4 +114,4 @@
 <body>
     <div id="wrap">
         <?php include('sidebar.php'); ?>
-        <header><h1>JPMC VT Digital Whiteboard</h1></header>
+        <header><h1>Digital Whiteboard</h1></header>
